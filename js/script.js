@@ -60,7 +60,7 @@ var me = {
 console.log(me.age);
 
 // This sets the age property on the me object to the value of 24
-me.age = 24;
+// me.age = 24;
 
 console.log(me.age);
 
@@ -109,6 +109,7 @@ sayHello();
 sayHelloTo("meeeee")
 
 //Variable created within a funtion are only available within the function, this is called funtion scope.
+//======= FUNCTION declerations=========
 function sayHelloTo(name) {
   var message = "Welcome to Javascript City " + name + "!";
   console.log(message);
@@ -118,6 +119,7 @@ sayHelloTo("Richard");
 sayHelloTo(myFullName);
 
 // This is a function expression that creates a function called sumNums
+//==========FUNTION expression
 var sumNums = function(firstNum, secondNum){
   var sum = firstNum + secondNum;
 //This will return the value of the sum variable to where the function is called, once a return statement is triggered no further code within the function is executed.
@@ -129,3 +131,29 @@ sumNums(2,2);
 console.log( sumNums(2,2) );
 
 var mySum = sumNums(923, 13454);
+
+//============METHODS==================
+// is a function of the property of a object
+ var apollo = {
+   isDog: true,
+   breed: 'mutt',
+   legs: 4,
+   age: 2,
+   toys: ['Mrs. Moose', 'Bone', 'Half a Giraffe'],
+   // this is the speak method on the apollo object, METHODS are functions that are the property of an object
+   speak: function(){
+     console.log('woof woof');
+   },
+   sayHiTo: function(name, age) {
+     console.log("Hi " + name + " woof woof! You're " + age);
+   }
+ };
+ // this calls the speak method on the apollo object
+ apollo.speak();
+// with functions that use multiple parameters the order matters. Supply the parameters in the same order in whuch the arguments are listed where the function is defined
+ apollo.sayHiTo("Stella", me.age);
+
+// The console object is a global object created within the browser, log is a method on that object.
+ console.log(console);
+
+ 
